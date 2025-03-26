@@ -1,0 +1,39 @@
+{
+  "name": "grocery",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.ts",
+		"build": "npx tsc",
+		"check-types": "tsc --pretty --noEmit",
+		"lint:check": "eslint 'src/**/*.{js,jsx,ts,tsx,json}'",
+		"lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+		"test-all": "npm run check-prettier  && npm run check-lint && npm run check-types",
+		"format:fix": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,scss,json}' --config ./.prettierrc",
+		"format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,scss,json}' --config ./.prettierrc",
+		"type-check": "tsc --noEmit",
+		"check:all": "npm run lint:check && npm run format:check && npm run type-check",
+		"fix:all": "npm run lint:fix && npm run format:fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "pg": "^8.14.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.21"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  }
+}
